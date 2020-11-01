@@ -12,6 +12,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     TextView textViewUsername;
     Button bkScan;
+    static int helpId;
+    static String helpId2;
+
 
 
     @Override
@@ -40,11 +43,16 @@ public class ProfileActivity extends AppCompatActivity {
 
         textViewUsername.setText(user.getUsername());
 
+        helpId = user.getId();
+        helpId2 = user.getUsername();
+
         bkScan = (Button)findViewById(R.id.book_issue);
 
         bkScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
+                
                 Intent intent = new Intent(getApplicationContext(), Scanner.class);
                 startActivity(intent);
             }
@@ -54,6 +62,8 @@ public class ProfileActivity extends AppCompatActivity {
         findViewById(R.id.book_search).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                 finish();
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(intent);
 

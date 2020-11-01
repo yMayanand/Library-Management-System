@@ -19,12 +19,13 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText editTextUsername, editTextPassword;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        editTextUsername = (EditText) findViewById(R.id.editTextUsername);
+        editTextUsername = (EditText) findViewById(R.id.et);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
 
 
@@ -104,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                                 userJson.getString("gender")
                         );
 
+
+
                         //storing the user in shared preferences
                         SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
 
@@ -111,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                     } else {
-                        Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -30,8 +30,24 @@
             android:label="Sign up" />
 
         <activity
-            android:name=".SearchResultActivity"
-            android:label="Search result"/>
+            android:name=".ConfirmationPage"
+            android:label="Confirmation"/>
+
+        <activity
+            android:name=".FoundAvailable"
+            android:label="Genesis"/>
+
+        <activity
+            android:name=".FoundUnavailable"
+            android:label="Genesis"/>
+
+        <activity
+            android:name=".NotFound"
+            android:label="Genesis"/>
+
+
+
+
 
         <activity
             android:name=".SearchActivity"
@@ -49,7 +65,7 @@
             android:label="Scanner"/>
         <activity
             android:name=".ProfileActivity"
-            android:label="Profile" />
+            android:label="Genesis" />
 
     </application>
 

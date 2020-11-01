@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6F4EA"
+    android:background="#FFFFFF"
     tools:context=".StartActivity">
 
     <RelativeLayout
@@ -27,7 +27,7 @@
 
 
             <EditText
-                android:id="@+id/editTextUsername"
+                android:id="@+id/et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -97,7 +97,8 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/log_in"
                 android:textAlignment="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="#039BE5" />
         </LinearLayout>
 
         <ProgressBar

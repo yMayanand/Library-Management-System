@@ -35,7 +35,9 @@ public class StartActivity extends AppCompatActivity {
             return;
         }
 
-        editTextUsername = (EditText) findViewById(R.id.editTextUsername);
+        setContentView(R.layout.activity_registration);
+
+        editTextUsername = (EditText) findViewById(R.id.et);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         radioGroupGender = (RadioGroup) findViewById(R.id.radioGender);
@@ -156,7 +158,7 @@ public class StartActivity extends AppCompatActivity {
                         finish();
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                     } else {
-                        Toast.makeText(getApplicationContext(), "Some error occurred", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

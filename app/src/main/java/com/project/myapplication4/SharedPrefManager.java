@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-/**
- * Created by Belal on 9/5/2017.
- */
 
 //here for this class we are using a singleton pattern
 

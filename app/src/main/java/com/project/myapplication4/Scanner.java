@@ -24,6 +24,7 @@ public class Scanner extends AppCompatActivity {
 
     int count;
     SurfaceView surfaceView;
+  /*  TextView txtBarcodeValue;*/
 
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
@@ -41,6 +42,7 @@ public class Scanner extends AppCompatActivity {
     private void initViews() {
 
         surfaceView = findViewById(R.id.surfaceView);
+      /*  txtBarcodeValue = findViewById(R.id.textView2);*/
 
 
     }
@@ -97,18 +99,10 @@ public class Scanner extends AppCompatActivity {
 
 
                 intentData = barcodes.valueAt(0).displayValue;
-               if (barcodes.size() != 0) {
 
-                           Toast.makeText(getApplicationContext(), "Scanning Complete", Toast.LENGTH_SHORT).show();
-                           Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
-                           startActivity(intent);
-
-
-               }
-
-
-
-               }
+                           finish();
+                           startActivity(new Intent(getApplicationContext(), ConfirmActivity.class));
+            }
         });
     }
 

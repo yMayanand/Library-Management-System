@@ -7,7 +7,7 @@ import android.view.WindowManager;
 import android.os.Handler;
 
 public class SplashActivity extends AppCompatActivity {
-    private static int SPLASH_SCREEN_TIME_OUT=2000;
+    private static int SPLASH_SCREEN_TIME_OUT=1000;
     // After completion of 2000 ms, the next activity will get started.
 
     protected void onCreate(Bundle savedInstanceState) {

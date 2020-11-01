@@ -4,29 +4,25 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import android.widget.SearchView;
-
+import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 
 public class SearchActivity extends AppCompatActivity {
 
 
-    SearchView srchView;
+ SearchView srchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        srchView = findViewById(R.id.searchView9);
+        srchView = findViewById(R.id.etrx);
 
 
 
@@ -35,14 +31,14 @@ public class SearchActivity extends AppCompatActivity {
         findViewById(R.id.btnSearch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userLogin();
+                bookSearch();
             }
         });
 
 
     }
 
-    private void userLogin() {
+    private void bookSearch() {
         //first getting the values
         final String searchQuery = srchView.getQuery().toString();
 
@@ -51,14 +47,14 @@ public class SearchActivity extends AppCompatActivity {
 
         //if everything is fine
 
-        class UserLogin extends AsyncTask<Void, Void, String> {
+        class BookSearch extends AsyncTask<Void, Void, String> {
 
-            ProgressBar progressBar;
+           ProgressBar progressBar;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                progressBar = (ProgressBar) findViewById(R.id.progressSearchBar);
+               progressBar = (ProgressBar) findViewById(R.id.progressSearchBar);
                 progressBar.setVisibility(View.VISIBLE);
             }
 
@@ -75,20 +71,18 @@ public class SearchActivity extends AppCompatActivity {
                     //if no error in response
                     if (!obj.getBoolean("error")) {
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-
-                        //getting the user from the response
-                        JSONObject bookJson = obj.getJSONObject("book");
-
-                        //creating a new user object
-                        Search search = new Search(
-                                bookJson.getString("book")
-                              );
-
-
-
-                        startActivity(new Intent(getApplicationContext(), SearchResultActivity.class));
+                         finish();
+                        startActivity(new Intent(getApplicationContext(), FoundUnavailable.class));
                     } else {
-                        Toast.makeText(getApplicationContext(), "Sorry no such book found", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        if (!obj.getBoolean("error2")) {
+                             finish();
+                            startActivity(new Intent(getApplicationContext(), FoundAvailable.class));
+
+                        }else{
+                             finish();
+                            startActivity(new Intent(getApplicationContext(), NotFound.class));
+                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -110,7 +104,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
-        UserLogin ul = new UserLogin();
+        BookSearch ul = new BookSearch();
         ul.execute();
     }
 }
