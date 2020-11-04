@@ -2,7 +2,9 @@ package com.project.myapplication4;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -104,7 +106,6 @@ public class LoginActivity extends AppCompatActivity {
                                 userJson.getString("email"),
                                 userJson.getString("gender")
                         );
-
 
 
                         //storing the user in shared preferences

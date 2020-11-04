@@ -1,7 +1,9 @@
 package com.project.myapplication4;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -25,10 +27,8 @@ public class ConfirmationPage extends AppCompatActivity {
         });
 
 
-
-
-
     }
+
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
@@ -43,7 +43,7 @@ public class ConfirmationPage extends AppCompatActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }

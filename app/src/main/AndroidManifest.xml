@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -18,11 +19,11 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.MyApplication4.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -31,22 +32,19 @@
 
         <activity
             android:name=".ConfirmationPage"
-            android:label="Confirmation"/>
+            android:label="Confirmation" />
 
         <activity
             android:name=".FoundAvailable"
-            android:label="Genesis"/>
+            android:label="Genesis" />
 
         <activity
             android:name=".FoundUnavailable"
-            android:label="Genesis"/>
+            android:label="Genesis" />
 
         <activity
             android:name=".NotFound"
-            android:label="Genesis"/>
-
-
-
+            android:label="Genesis" />
 
 
         <activity
@@ -59,10 +57,10 @@
 
         <activity
             android:name=".ConfirmActivity"
-            android:label="Confirmation"/>
+            android:label="Confirmation" />
         <activity
             android:name=".Scanner"
-            android:label="Scanner"/>
+            android:label="Scanner" />
         <activity
             android:name=".ProfileActivity"
             android:label="Genesis" />

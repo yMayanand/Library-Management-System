@@ -2,20 +2,24 @@ package com.project.myapplication4;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class SearchActivity extends AppCompatActivity {
 
 
- SearchView srchView;
+    SearchView srchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         srchView = findViewById(R.id.etrx);
-
 
 
         //if user presses on login
@@ -43,18 +46,16 @@ public class SearchActivity extends AppCompatActivity {
         final String searchQuery = srchView.getQuery().toString();
 
 
-
-
         //if everything is fine
 
         class BookSearch extends AsyncTask<Void, Void, String> {
 
-           ProgressBar progressBar;
+            ProgressBar progressBar;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-               progressBar = (ProgressBar) findViewById(R.id.progressSearchBar);
+                progressBar = (ProgressBar) findViewById(R.id.progressSearchBar);
                 progressBar.setVisibility(View.VISIBLE);
             }
 
@@ -71,16 +72,16 @@ public class SearchActivity extends AppCompatActivity {
                     //if no error in response
                     if (!obj.getBoolean("error")) {
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-                         finish();
+                        finish();
                         startActivity(new Intent(getApplicationContext(), FoundUnavailable.class));
                     } else {
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                         if (!obj.getBoolean("error2")) {
-                             finish();
+                            finish();
                             startActivity(new Intent(getApplicationContext(), FoundAvailable.class));
 
-                        }else{
-                             finish();
+                        } else {
+                            finish();
                             startActivity(new Intent(getApplicationContext(), NotFound.class));
                         }
                     }

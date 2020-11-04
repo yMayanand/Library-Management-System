@@ -1,7 +1,9 @@
 package com.project.myapplication4;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 public class FoundUnavailable extends AppCompatActivity {
 
     boolean doubleBackToExitPressedOnce = false;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.found_unavailable);
@@ -40,7 +43,7 @@ public class FoundUnavailable extends AppCompatActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }

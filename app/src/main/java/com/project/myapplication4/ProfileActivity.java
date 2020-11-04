@@ -1,7 +1,9 @@
 package com.project.myapplication4;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +16,6 @@ public class ProfileActivity extends AppCompatActivity {
     Button bkScan;
     static int helpId;
     static String helpId2;
-
 
 
     @Override
@@ -30,10 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
 
 
-
         textViewUsername = (TextView) findViewById(R.id.textViewUsername);
-
-
 
 
         //getting the current user
@@ -46,13 +44,13 @@ public class ProfileActivity extends AppCompatActivity {
         helpId = user.getId();
         helpId2 = user.getUsername();
 
-        bkScan = (Button)findViewById(R.id.book_issue);
+        bkScan = (Button) findViewById(R.id.book_issue);
 
         bkScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
-                
+
                 Intent intent = new Intent(getApplicationContext(), Scanner.class);
                 startActivity(intent);
             }
@@ -63,13 +61,12 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                 finish();
+                finish();
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(intent);
 
             }
         });
-
 
 
         //when the user presses logout button

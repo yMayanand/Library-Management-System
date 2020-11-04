@@ -2,13 +2,17 @@ package com.project.myapplication4;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.HashMap;
 
 
@@ -27,7 +31,7 @@ public class ConfirmActivity extends AppCompatActivity {
 
                 issueBook();
 
-                
+
             }
         });
 
@@ -42,9 +46,7 @@ public class ConfirmActivity extends AppCompatActivity {
         });
 
 
-
     }
-
 
 
     private void issueBook() {
@@ -92,7 +94,7 @@ public class ConfirmActivity extends AppCompatActivity {
                             finish();
                             startActivity(new Intent(getApplicationContext(), FoundUnavailable.class));
 
-                        }else{
+                        } else {
                             finish();
                             startActivity(new Intent(getApplicationContext(), NotFound.class));
                         }

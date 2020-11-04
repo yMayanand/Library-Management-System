@@ -42,7 +42,7 @@ public class SharedPrefManager {
         editor.apply();
     }
 
-    //this method will checker whether user is already logged in or not
+    //this method will check whether user is already logged in or not
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USERNAME, null) != null;
